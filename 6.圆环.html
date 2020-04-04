@@ -70,7 +70,19 @@
             deg-=40;
             box.style.transform='rotateY('+deg+'deg)';
         }
-      
+        setInterval(function(){
+           deg+=40;           
+           if(!rock) return;        
+           
+           box.style.transform='rotateY('+deg+'deg)';
+       },200);
+       var rock=true;                
+       stage.onmouseenter=function(){
+           rock=false;              
+       }
+       stage.onmouseleave=function(){
+           rock=true;             
+       }
      
     </script>
 </body>
