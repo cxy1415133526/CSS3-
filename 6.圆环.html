@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{
+            background-color: yellow;
+        }
+        .stage{
+            width: 800px;
+            height: 400px;
+            perspective: 3300px;
+            margin: 100px auto;
+            border: 1px solid #000;
+        }
+        .stage .box{
+            width: 800px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .box p{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -150px;
+        }
+        .box p img{
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+   <div class="stage" id="stage">
+       <button id="btn1">上一张</button>
+       <button id="btn2">下一张</button>
+       <div class="box" id="box">
+           <p><img src="images/1.png" alt=""></p>
+           <p><img src="images/2.png" alt=""></p>
+           <p><img src="images/3.png" alt=""></p>
+           <p><img src="images/4.png" alt=""></p>
+           <p><img src="images/0.png" alt=""></p>
+           <p><img src="images/5.png" alt=""></p>
+           <p><img src="images/6.jpg" alt=""></p>
+           <p><img src="images/7.png" alt=""></p>
+       </div>
+   </div>
+    <script>
+        var btn1=document.getElementById('btn1');
+        var btn2=document.getElementById('btn2');
+        var box=document.getElementById('box');
+        var ps=document.querySelectorAll('p');
+        var stage=document.getElementById('stage')
+        for(var i=0;i<ps.length;i++){
+            //图片旋转的度数360/9
+            ps[i].style.transform='rotateY('+(i*40)+'deg) translateZ(500px)'; 
+        }
+        //存放图片的box进行旋转
+        var deg=0;
+        btn1.onclick=function(){
+            deg+=40;
+            box.style.transform='rotateY('+deg+'deg)';
+        }
+        btn2.onclick=function(){
+            deg-=40;
+            box.style.transform='rotateY('+deg+'deg)';
+        }
+      
+     
+    </script>
+</body>
+</html>

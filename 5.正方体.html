@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .stage {
+            width: 500px;
+            height: 500px;
+            perspective: 3300px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            /* 保留3D */
+            /* 如果一个盒子内部有不同旋转的元素，自己也要旋转的情况下 */
+            /* 必须设置这个保留3D的属性。即自己又是容器，又是演员。 */
+            transform-style: preserve-3d;
+        }
+        .box p {
+            position: absolute;
+            top:0;
+            left:0;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            font-size: 40px;
+            line-height: 200px;
+        }
+
+        /* 正面 */
+        .box p:nth-child(1) {
+            background-color: rgba(141, 230, 188, 0.465);
+            transform: translateZ(100px);
+        }
+        /* 顶面 */
+        .box p:nth-child(2) {
+            background-color: rgba(100, 189, 17, 0.465);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        /* 背面 */
+        .box p:nth-child(3){
+            background-color: rgba(155, 153, 19, 0.849);
+            transform:rotateX(180deg) translateZ(100px);
+        }
+        /* 底面 */
+        .box p:nth-child(4){
+            background-color: rgba(0, 255, 128, 0.856);
+            transform:rotateX(270deg) translateZ(100px);
+        }
+        /* 左侧面 */
+        .box p:nth-child(5){
+            background-color: rgba(0, 128, 128, 0.699);
+            transform:rotateY(-90deg) translateZ(100px);
+        }
+        .box p:nth-child(6){
+            background-color: rgba(255, 99, 71, 0.726);
+            transform:rotateY(90deg) translateZ(100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="stage">
+        <div class="box" id="box">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+            <p>4</p>
+            <p>5</p>
+            <p>6</p>
+        </div>
+    </div>
+    <script>
+        var x=0;
+        var y=0;
+        var box=document.getElementById('box');
+        setInterval(function(){
+            x++;
+            y++;
+            box.style.transform='rotateX('+x+'deg) rotateY('+y+'deg)';
+        },20);
+    </script>
+</body>
+</html>

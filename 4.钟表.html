@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            background: -webkit-linear-gradient(top, rgb(233, 131, 131), rgb(70, 17, 17));
+        }
+
+        .biaopan {
+            width: 600px;
+            height: 600px;
+            border: 6px solid #000;
+            margin: 50px auto;
+            border-radius: 50%;
+            box-shadow: 13px 13px 13px rgb(0, 0, 0, .5);
+            position: relative;
+            background-color: #fff;
+        }
+
+        .biaopan .kedu {
+            position: absolute;
+            width: 15px;
+            height: 50px;
+            background-color: #333;
+            top: 50%;
+            left: 50%;
+            margin-top: -7.5px;
+            margin-left: -25px;
+        }
+
+        .miaozhen {
+            position: absolute;
+            width: 10px;
+            height: 300px;
+            background-color: rgb(230, 22, 22);
+            top: 75px;
+            left: 50%;
+            margin-left: -5px;
+            transform-origin: 50% 75%;
+            transform: rotate(0deg);
+
+        }
+
+        .fenzhen {
+            position: absolute;
+            width: 15px;
+            height: 220px;
+            background-color: rgb(13, 59, 211);
+            top: 135px;
+            left: 50%;
+            margin-left: -7.5px;
+            transform-origin: 50% 75%;
+            transform: rotate(0deg);
+        }
+
+        .shizhen {
+            position: absolute;
+            width: 22px;
+            height: 160px;
+            background-color: rgb(44, 43, 44);
+            top: 180px;
+            left: 50%;
+            margin-left: -11px;
+            transform-origin: 50% 75%;
+            transform: rotate(0deg);
+        }
+
+        .biaopan .c {
+            width: 25px;
+            height: 25px;
+            border: 6px solid red;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -18.5px;
+            margin-top: -18.5px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="biaopan">
+        <div class="kedu"></div>
+        <div class="kedu"></div>
+        <div class="kedu"></div>
+        <div class="kedu"></div>
+        <div class="kedu"></div>
+        <div class="kedu"></div>
+        <div class="kedu"></div>
+        <div class="kedu"></div>
+        <div class="kedu"></div>
+        <div class="kedu"></div>
+        <div class="kedu"></div>
+        <div class="kedu"></div>
+
+        <div class="shizhen" id="shizhen"></div>
+        <div class="fenzhen" id="fenzhen"></div>
+        <div class="miaozhen" id="miaozhen"></div>
+
+        <div class="c"></div>
+
+    </div>
+    <script>
+        var kedus = document.getElementsByClassName('kedu');
+        var miaozhen = document.getElementById('miaozhen');
+        var fenzhen = document.getElementById('fenzhen');
+        var shizhen = document.getElementById('shizhen');
+        for (var i = 0; i < 12; i++) {
+            kedus[i].style.transform = 'rotate(' + 30 * i + 'deg) translateY(-260px)';
+        }
+        setInterval(function () {
+            //得到系统的时间“秒”分“”时“
+            var s = new Date().getSeconds();
+            var m = new Date().getMinutes();
+            var h = new Date().getHours();
+
+            miaozhen.style.transform = 'rotate(' + s * 6 + 'deg)';
+            fenzhen.style.transform = 'rotate(' + (m * 6 + s * 0.1) + 'deg)';
+            shizhen.style.transform = 'rotate(' + (h % 12 * 30 + m * 0.1) + 'deg)';
+        }, 1000);
+    </script>
+</body>
+
+</html>
