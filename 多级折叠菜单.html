@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 400px;
+            margin: 100px auto;
+            cursor: pointer;
+        }
+
+        .box1 {
+            width: 400px;
+            border: 1px solid #ccc;
+        }
+
+        h3 {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 32px;
+            margin-left: 10px;
+        }
+
+        .box1>h3 {
+            font-weight: bold;
+        }
+
+        .box1>h3 span {
+            transform: rotate(-90deg);
+            display: block;
+            font-size: 20px;
+            font-weight: normal;
+            float: right;
+        }
+
+        .box2 h3 span {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-left-color: #ccc;
+            margin-right: 6px;
+            transform: rotate(0deg);
+            transition: all 0.4s ease 0s;
+        }
+
+        .box3,
+        .box4 {
+            padding-left: 30px;
+        }
+
+        .box2,
+        .box3,
+        .box4 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <div class="box1">
+            <h3>AAAA AAAAAAA<span>&lt;</span></h3>
+            <div class="box2">
+                <h3>111111111</h3>
+            </div>
+        </div>
+        <div class="box1">
+            <h3>BBBBBBBBBBBBBBBBB<span>&lt;</span></h3>
+            <div class="box2">
+                <h3><span></span>B0bbbbbbbbbbbb</h3>
+                <div class="box3">
+                    <h3>b1bbbbbbbbbbbbbbbbbbb</h3>
+                    <h3>b2bbbbbbbbbbbbbbbbbbb</h3>
+                    <h3>b3bbbbbbbbbbbbbbbbbbb</h3>
+                    <h3>b4bbbbbbbbbbbbbbbbbbb</h3>
+                </div>
+                <h3><span></span>B1bbbbbbbbbbb</h3>
+                <div class="box3">
+                    <h3>BBBBB</h3>
+                    <h3><span></span>cccc</h3>
+                    <div class="box4">
+                        <h3>b3bbbbbbbbbbb</h3>
+                        <h3>b4bbbbbbbbbb</h3>
+                        <h3>b4bbbbbbbbbbb</h3>
+                    </div>
+                    <h3><span></span>CCC</h3>
+                    <div class="box4">
+                        <p>xxxxxxxxxxxxx</p>
+                    </div>
+                    <h3><span></span>CCC</h3>
+                    <div class="box4">
+                        <p>xxxxxxxxx</p>
+                    </div>
+                    <h3>11111111111</h3>
+                    <h3>22222222222</h3>
+                    <h3>33333333333333</h3>
+                </div>
+                <h3><span></span>DDDDD</h3>
+                <div class="box3">
+                    <h3>GGGGGGGG</h3>
+                </div>
+                <h3><span></span>RRRRRRRRRRRR</h3>
+                <div class="box3">
+                    <h3>RWRWRWRWRW</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+
+        //一级菜单
+        $('.box1>h3').click(function () {
+            if ($(this).next().is(':visible')) {
+                $(this).next().slideUp();
+                $(this).children()[0].style.transform = 'rotate(-90deg)';
+
+            } else {
+                $(this).next().slideDown();
+                $(this).children('span')[0].style.transform = 'rotate(90deg)';
+            }
+
+        });
+        $('.box2 h3').click(function () {
+             if ($(this).next().is(':visible')) {
+                    $(this).next().slideUp(300);
+                    $(this).children('span')[0].style.transform = 'rotate(0deg)'
+                }else{
+                    $(this).next().slideDown(300);
+                    $(this).children('span')[0].style.transform='rotate(90deg)';
+                }
+           
+        })
+    </script>
+</body>
+
+</html>

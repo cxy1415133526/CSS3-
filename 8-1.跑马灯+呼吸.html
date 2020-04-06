@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel {
+            width: 740px;
+            height: 288px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel ul {
+            list-style: none;
+            position: relative;
+        }
+
+        .carousel ul li {
+            position: absolute;
+            width: 740px;
+            height: 288px;
+            display: none;
+        }
+
+        .carousel ul li.no0 {
+            display: block;
+        }
+
+        .carousel ul li img {
+            width: 740px;
+            height: 288px;
+        }
+
+        .mask {
+            
+            width: 740px;
+            height: 120px;
+            position: absolute;
+            left: 0px;
+            bottom: -50px;
+            background-color: rgba(0,0,0,.3);
+            padding: 0px 60px 10px 69px;
+
+        }
+        .stage{
+            overflow: hidden;
+            width:645px;
+      
+
+        }
+
+        .mask ol {
+            list-style: none;
+            width: 7000px;
+            height: 66px;
+           
+        }
+
+        .mask ol li {
+
+            float: left;
+            width: 120px;
+            height: 66px;
+            margin-right: 10px;
+           position: relative;
+
+
+        }
+
+
+        .mask ol li.cur {
+            border: 2px solid #fff;
+        }
+
+        .mask ol li img {
+            width: 120px;
+            height: 66px;
+        }
+
+        .carousel .btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(238, 220, 218, 0.842);
+            position: absolute;
+            top: 90%;
+            margin-top: -25px;
+
+        }
+
+        .carousel .leftbtn {
+            left: 10px
+        }
+
+        .carousel .rightbtn {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel" id="carousel">
+        <ul>
+            <li class="no0"><a href=""><img src="images/no1/0-0.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/no1/1-1.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/no1/2-2.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/no1/3-3.jpg" alt=""></a></li>
+            <li><a href=""><img src="images/no1/4-4.jpg" alt=""></a></li>
+
+        </ul>
+        <div class="mask">
+            <div class="stage">
+                <ol>
+                    <li class="cur"><a href=""><img src="images/no1/0.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/no1/1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/no1/2.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/no1/3.jpg" alt=""></a></li>
+                    <li><a href=""><img src="images/no1/4.jpg" alt=""></a></li>
+
+                </ol>
+            </div>
+        </div>
+        <div class="leftbtn btn" id="leftbtn"></div>
+        <div class="rightbtn btn" id="rightbtn"></div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        for (var i = 0; i < 5; i++) {
+            //appendTo是添加在元素的后面，prepend是添加在前面
+            $('#carousel ol li').eq(i).clone().appendTo('#carousel ol');
+        }
+        
+       var idx1=0;
+        $('#leftbtn').click(function () {
+          
+            if (idx1 == 5) {
+                idx1 = 0;
+                $('#carousel ol li').css('left',0);
+            }
+            idx1++;
+            $('#carousel ol li').stop(true).animate({'left':-130*idx1},400)
+           
+        });
+    
+
+        setInterval(function () {
+
+            idx++;
+            if (!lock) return;
+           $('ol li').eq(idx%5).addClass('cur').siblings().removeClass('cur');
+           $('ul li').eq(idx%5).addClass('no0').siblings().removeClass('no0');
+           
+
+        }, 1000);
+        var idx = 0;
+         //鼠标滑到小图片上大图片显示，同时小图片加cur
+        $('#carousel ol li').mouseenter(function () {
+            $('#carousel ul li').eq(idx%5).stop(true).fadeOut();
+            idx = $(this).index();
+            $('#carousel ul li').eq(idx%5).stop(true).fadeIn();
+            $(this).addClass('cur').siblings().removeClass('cur');
+        });
+        var lock = true;
+        $('#carousel').mouseenter(function () {
+            lock = false;
+        })
+        $('#carousel').mouseleave(function () {
+            lock = true;
+        })
+    </script>
+</body>
+
+</html>

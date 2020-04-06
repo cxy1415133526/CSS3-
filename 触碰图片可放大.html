@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 640px;
+
+            margin: 100px auto;
+        }
+
+        .nav {
+            width: 364px;
+        }
+
+        .nav ul {
+            list-style: none;
+            width: 640px;
+            height: 30px;
+        }
+
+        .nav ul li {
+            float: left;
+            margin-left: 10px;
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .nav ul li.cur {
+            background-color: orangered;
+            color: #fff;
+            display: block;
+        }
+
+        .bd {
+            width: 640px;
+            height: 150px;
+            margin-top: 10px;
+
+        }
+
+        .bd_in.cur {
+            display: block;
+        }
+
+        .bd_in {
+            display: none;
+        }
+
+        .bd h3 {
+            color: orangered;
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        .bdl {
+            float: left;
+            margin-left: 10px;
+        }
+
+        .bdl img {
+            width: 150px;
+            height: 100px;
+        }
+
+        .bdy {
+            float: left;
+            padding-left: 10px;
+        }
+
+        .bdy dt {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .bdy dd {
+            position: relative;
+            font-size: 16px;
+            padding-left: 20px;
+            line-height: 37px;
+
+        }
+
+        .bdy dd span {
+            position: absolute;
+            top: 13px;
+            left: 10px;
+            width: 5px;
+            height: 5px;
+            background-color: orangered;
+        }
+
+        .bd img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="nav">
+            <ul>
+                <li class="cur">要闻</li>
+                <li>明星</li>
+                <li>美图</li>
+                <li>电影</li>
+                <li>电视剧</li>
+                <li>综艺</li>
+                <li>音乐</li>
+                <li>视频</li>
+                <li>韩娱</li>
+            </ul>
+        </div>
+        <div class="bd ">
+            <div class="bd_in cur">
+                <h3>热点-徐梦洁首曝身世告白继父：感谢叔叔没放弃 一直照顾我们</h3>
+                <div class="bdl">
+                    <img src="images/no1/5.jpg" alt="">
+                </div>
+                <div class="bdy">
+                    <dl>
+                        <dt>小唐尼过生日秀拼音感谢中国粉丝 不过口罩戴反</dt>
+                        <dd><span></span>谭松韵超长个性签名曝光土味可爱 胡夏发文回应被说像商演</dd>
+                        <dd><span></span>刘雨昕谈女团中性风：做自己 虞书欣暖心安慰鼓励降级队友</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="bd_in">
+
+                <div class="bdl">
+                    <img src="images/0.png" alt="">
+                </div>
+                <div class="bdy">
+                    <p>可爱的卡通小萌兔</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    var idx = 0;
+    $('.nav ul li').click(function () {
+        $(this).addClass('cur').siblings().removeClass('cur');
+        idx = $(this).index();
+        $('.bd_in').eq(idx).addClass('cur').siblings().removeClass('cur');
+    })
+</script>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel {
+            padding-top: 50px;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel ul {
+            list-style: none;
+            position: relative;
+            height: 350px;
+        }
+
+        .carousel ul li {
+            position: absolute;
+            width: 100%;
+            height: 350px;
+            display: none;
+        }
+
+        .carousel ul li img {
+            position: absolute;
+        }
+
+        .carousel ul li.cur {
+            display: block;
+        }
+
+        .carousel ul li:nth-child(1) {
+            background: rgb(201, 163, 58) url(images/junmeng/1.png) no-repeat center left;
+        }
+
+        .carousel ul li:nth-child(1) img:nth-child(1) {
+            width: 330px;
+            top: -26px;
+            left: 220px;
+            transform: scale(0);
+            transition: all 1s ease 0s;
+        }
+
+        .carousel ul li:nth-child(1) img:nth-child(2) {
+            width: 388px;
+            left: 682px;
+            top: 0px;
+            transition: all .4s ease .8s;
+            opacity: 0;
+        }
+
+        .carousel ul li:nth-child(1) img:nth-child(3) {
+            left: 510px;
+            bottom: -20px;
+            opacity: 0;
+            transition: all 1s ease 1.4s;
+        }
+
+        .carousel ul li:nth-child(1) img:nth-child(1).cur {
+            transform: scale(1);
+        }
+
+        .carousel ul li:nth-child(1) img:nth-child(2).cur {
+            top: 30px;
+            opacity: 1;
+        }
+
+        .carousel ul li:nth-child(1) img:nth-child(3).cur {
+            opacity: 1;
+        }
+
+        .carousel ul li:nth-child(2) {
+            background: rgb(201, 163, 58) url(images/junmeng/2.jpg) no-repeat center center;
+        }
+
+        .carousel ul li:nth-child(2) img:nth-child(1) {
+            top: -52px;
+            left: 220px;
+            transform: scale(0);
+            transition: all 1s ease 0s;
+        }
+
+        .carousel ul li:nth-child(2) img:nth-child(1).cur {
+            transform: scale(1);
+        }
+
+        .carousel ul li:nth-child(2) img:nth-child(2) {
+            left: 782px;
+            top: 0px;
+            transition: all .4s ease .8s;
+            opacity: 0;
+        }
+
+        .carousel ul li:nth-child(2) img:nth-child(2).cur {
+            top: 30px;
+            opacity: 1;
+        }
+
+        .carousel ul li:nth-child(3) {
+            background: #b4874f url(images/junmeng/3.png) no-repeat center center;
+        }
+
+        .carousel ul li:nth-child(3) img:nth-child(1) {
+            top: 350px;
+            left: -330px;
+            transform: scale(0);
+            transition: all 1s ease 0s;
+        }
+
+        .carousel ul li:nth-child(3) img:nth-child(1).cur {
+            top: -44px;
+            left: 100px;
+            transform: scale(1);
+        }
+
+        .carousel ul li:nth-child(3) img:nth-child(2) {
+            left: 720px;
+            top: 0px;
+            transition: all .4s ease .8s;
+            opacity: 0;
+        }
+
+        .carousel ul li:nth-child(3) img:nth-child(2).cur {
+            top: 120px;
+            opacity: 1;
+        }
+
+        .carousel ol {
+            list-style: none;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            margin-top: -29px;
+        }
+
+        .carousel ol li {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .carousel ol li.cur {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel" id="carousel">
+        <ul>
+            <li class="cur">
+                <a href="javascript:">
+                    <img src="images/junmeng/1-0.png" alt="">
+                    <img src="images/junmeng/1-1.png" alt="">
+                    <img src="images/junmeng/1-2.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:">
+                    <img src="images/junmeng/2-0.png" alt="">
+                    <img src="images/junmeng/2-1.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:">
+                    <img src="images/junmeng/3-1.png" alt="">
+                    <img src="images/junmeng/3-2.png" alt="">
+                </a>
+            </li>
+        </ul>
+        <ol>
+            <li class="cur"></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+         $('ul li').eq(0).find('img').addClass('cur').parents('li').siblings().find('img').removeClass('cur');
+        var idx=0;
+        $('ol li').click(function(){
+            if($(this).is('.cur')){
+                return;
+            }
+               // 隐藏上一张轮播图
+            $('ul li').eq(idx).fadeOut(300);
+            idx=$(this).index();
+            // 显示点击这张轮播图
+            $('ul li').eq(idx).fadeIn(300);
+            // 显示点击这张轮播图的进场特效，兄弟图片的进场特效移除
+            $('ul li').eq(idx).find('img').addClass('cur').parents('li').siblings().find('img').removeClass('cur');
+              // 点击的小圆点添加类名，其他兄弟去掉类名
+            $(this).addClass('cur').siblings().removeClass('cur');
+        })
+    </script>
+</body>
+
+</html>
