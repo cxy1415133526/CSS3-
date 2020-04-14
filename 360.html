@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tools_list{
+            width: 1240px;
+            height: 300px;
+            border: 1px solid #000;
+            margin: 40px auto;
+        }
+        .tools_list ul{
+            list-style: none;
+        }
+        .tools_list ul li{
+            float: left;
+            width: 310px;
+            height: 380px;
+            overflow: hidden;
+            transition: all .4s ease 0s;
+            position: relative;
+        }
+        .tools_list:hover ul li{
+            width: 295px;
+        }
+        .tools_list:hover ul li:hover{
+            width: 355px;
+        }
+        .tools_list ul li .mask{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height:100%;
+            opacity: 0;
+            transition: all .4s ease 0s ;
+        }
+        .tools_list ul li:hover .mask{
+            opacity: 1;
+        }
+        .tools_list ul li .mask.no1{
+            background:linear-gradient(0deg,#7b43ff,#a05bff) ;
+        }
+        .tools_list ul li .mask.no2{
+            background:linear-gradient(0deg,#05b447,#02de8e) ;
+        }
+        .tools_list ul li .mask.no3{
+            background:linear-gradient(0deg,#eb4940,#ff9b6a) ;
+        }
+        .tools_list ul li .mask.no4{
+            background:linear-gradient(0deg,#6d3aff,#5d84ff) ;
+        }
+        .tools_list ul li .info{
+            width: 220px;
+            position: absolute;
+            top:230px ;
+            padding: 50px;
+            color: white;
+        }
+        .tools_list ul li .info p{
+            line-height:24px ;
+            opacity: 0;
+        }
+        .tools_list ul li .info h3{
+            font-size: 30px;
+            padding:10px 0;
+            transition: all .9s ease 0s;
+        }
+        .tools_list ul li .info .btn{
+            width: 80px;
+            height: 35px;
+            border: 1px solid #eee ;
+            border-radius: 5px;
+            margin-top:40px ;
+        }
+        .tools_list ul li:hover .info{
+            top:70px;
+        }
+        .tools_list ul li:hover .info p{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="tools_list">
+        <ul>
+            <li>
+                <img src="images/bg1.png" alt="">
+                <div class="mask no1"></div>
+                <div class="info">
+                    <img src="images/t01aa200851165968a4.png">
+                   <h3>文案</h3>
+                   <p>文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案</p>
+                   <div class="btn"></div>
+                </div>
+            </li>
+            <li>
+                <img src="images/bg2.png" alt="">
+                <div class="mask no2"></div>
+                <div class="info">
+                   <img src="images/t01aa200851165968a4.png">
+                   <h3>文案</h3>
+                   <p>文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案</p>
+                   <div class="btn"></div>
+                </div>
+            </li>
+            <li>
+                <img src="images/bg3.png" alt="">
+                <div class="mask no3"></div>
+                <div class="info">
+                    <img src="images/t01aa200851165968a4.png">
+                   <h3>文案</h3>
+                   <p>文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案</p>
+                   <div class="btn"></div>
+                </div>
+            </li>
+            <li>
+                <img src="images/bg4.png" alt="">
+                <div class="mask no4"></div>
+                <div class="info">
+                    <img src="images/t01aa200851165968a4.png">
+                   <h3>文案</h3>
+                   <p>文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案文案</p>
+                   <div class="btn"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

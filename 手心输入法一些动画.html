@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .line1{
+            position: absolute;
+            top: 67px;
+            left: 500px;
+            width: 74px;
+            height: 70px;
+            background: url(images/shouxjl.png);
+            background-position: -164px -151px;
+            animation: feixian 1s linear .3s infinite;
+            opacity: 0;
+        }
+        .line2{
+            position: absolute;
+            top: 67px;
+            left: 600px;
+            width: 157px;
+            height: 149px;
+            background: url(images/shouxjl.png);
+            background-position: -237px -221px;
+            animation: feixian 1s linear .3s infinite;
+            opacity: 0;
+        }
+        .line3{
+            position: absolute;
+            top: 67px;
+            left: 800px;
+            width: 92px;
+            height: 89px;
+            background: url(images/shouxjl.png);
+            background-position: -395px -221px;
+            animation: feixian 1s linear .3s infinite;
+            opacity: 0;
+        }
+        .line4{
+            position: absolute;
+            top: 67px;
+            left: 900px;
+            width: 154px;
+            height: 154px;
+            background: url(images/shouxjl.png);
+            background-position: -238px -373px;
+            animation: feixian 1s linear .3s infinite;
+            opacity: 0;
+        }
+        .hj{
+            position: absolute;
+            top: 67px;
+            left: 600px;
+            width: 225px;
+            height: 220px;
+            background: url(images/shouxjl.png);
+            background-position: -239px 0px;
+            animation: hj .3s linear 0s infinite alternate;
+       
+        }
+
+        @keyframes feixian{
+              /* 当时间流逝了百分之70的时候，它就旋转完毕了 */
+            0%{
+                opacity: 0;
+                transform: translateX(500px) translateY(-500px);
+            }
+            50%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+                transform:translateX(-500px) translateY(500px)
+            }
+        }
+        @keyframes hj{
+           0%{
+               opacity: 0;
+            transform:translateX(-20px) translateY(-20px)
+           }
+           100%{
+               opacity: 1;
+               transform: translateX(20px) translateY(20px);
+           }
+        }
+        .leaves{
+            position: absolute;
+            top:200px;
+            left: 150px;
+            width: 240px;
+            height: 153px;
+            background: url(images/shouxjl.png) 1px 0px;
+        }
+        .lleaves{
+            position: absolute;
+            top:60px;
+            left: 68px;
+            width: 92px;
+            height:66px;
+            background: url(images/shouxjl.png) 0px -149px;
+            animation: luoye 8s linear 0s infinite;
+        }
+        @keyframes luoye{
+            0%{
+                opacity: 0;
+                transform:translateX(-200px) translateY(-200px) 
+            }
+            50%{
+                opacity: 1;
+                transform:translateX(200px) translateY(200px)
+            }
+            
+            100%{
+                opacity: 0;
+                transform:translateX(300px) translateY(300px)
+            }
+           
+        }
+        .sjx{
+            width: 170px;
+            height: 170px;
+            background: url(images/shouxjl.png);
+            background-position: 0 -311px;
+            position: absolute;
+            top: 400px;
+            left: 100px;
+            animation: xz 2s linear 0s infinite ;
+        }
+        .fk{
+            width: 96px;
+            height: 96px;
+            background: url(images/shouxjl.png);
+            background-position: 0 -215px;
+            position: absolute;
+            top: 400px;
+            left: 250px;
+            animation: xz 2s linear 1s infinite ;
+            z-index: 99;
+        }
+        .yuan{
+            width: 156px;
+            height: 134px;
+            background: url(images/shouxjl.png);
+            background-position: 1px -484px;
+            position: absolute;
+            top: 400px;
+            left: 300px;
+            animation: xz 2s linear 0.4s infinite ;
+        }
+        @keyframes xz{
+            0%{
+                transform:rotate(0);
+            }
+            70% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .deng{
+            position: absolute;
+            top:643px;
+            left: 477px;
+            width: 191px;
+            height: 267px;
+            background: url(images/shouxjl.png);
+            background-position: 0 -620px;
+           
+        }
+        
+        .bling{
+            width: 341px;
+            height: 256px;
+            background: url(images/shouxjl.png);
+            background-position: 0 -887px;
+            position: absolute;
+            top: 600px;
+            left: 402px;
+            animation: faguang .5s linear 0s infinite alternate;
+        }
+        @keyframes faguang{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="leaves"></div>
+    <div class="lleaves"></div>
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+    <div class="line4"></div>
+    <div class="hj"></div>
+    <div class="sjx"></div>
+    <div class="fk"></div>
+    <div class="yuan"></div>
+    <div class="deng"></div>
+    <div class="bling"></div>
+</body>
+</html>

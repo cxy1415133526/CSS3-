@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu{
+            width: 500px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: rgb(236, 227, 227);
+            font-size: 14px;
+            line-height: 26px;
+        }
+       .menu .lev1_b{
+          display: none;
+          padding-left: 30px;
+       }
+       .menu .lev2_b{
+           padding-left: 50px;
+           display: none;
+       }
+       .menu .lev3_b{
+           padding-left: 80px;
+           display: none;
+       }
+       .menu .lev1_h{
+           cursor:pointer;
+           position: relative;
+       }
+       .menu .lev1_h:hover{
+           background-color: orange;
+       }
+       .menu .lev1_h::after{
+           content: '';
+           width: 20px;
+           height: 20px;
+           position: absolute;
+           right:0;
+           top: 0;
+           background: url(images/jt.svg);
+           transition: all .3s ease 0s;
+       }
+       /* 有cur属性就旋转 */
+       .menu .lev1_h.cur::after{
+           transform:rotateX(180deg);
+       }
+       .menu .lev2_h{
+            cursor: pointer;
+            position: relative;
+       }
+       .menu .lev2_h::before{
+           content:'';
+           position: absolute;
+           left:-15px;
+           top:3px;
+           width: 20px;
+           height: 20px;
+           background: url(images/xy.svg);
+            transition: all .3s ease 0s;
+       }
+       .menu .lev2_h.cur::before{
+           transform:rotate(90deg);
+       }
+       .menu .lev3_h{
+           cursor: pointer;
+           position: relative;
+       }
+       .menu .lev3_h.cur::before{
+           content:'';
+           position: absolute;
+           left:-17px;
+           top:3px;
+           width: 20px;
+           height: 20px;
+           background: url(images/xy.svg);
+            transition: all .3s ease 0s;
+       }
+       .menu .lev3_h.cur1::before{
+           transform:rotate(90deg);
+       }
+
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="lev1">
+            <div class="lev1_h ">河北省</div>
+            <div class="lev1_b">
+                <div class="lev2">
+                    <div class="lev2_h">石家庄市</div>
+                    <div class="lev2_b">
+                        <div class="lev3">
+                            <div class="lev3_h cur">长安区</div>
+                            <div class="lev3_b">
+                                <div class="lev4">
+                                <div class="lev4_h">长安一街</div>
+                            </div>
+                            <div class="lev4">
+                                <div class="lev4_h">长安二街</div>
+                            </div>
+                        </div>
+                        <div class="lev3">
+                        <div class="lev3_h">桥东区</div>
+                    </div>
+                        <div class="lev3">
+                            <div class="lev3_h">桥西区</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lev2">
+                    <div class="lev2_h">保定市</div>
+                    <div class="lev2_b">
+                        <div class="lev3">
+                            <div class="lev3_h">新市区</div>
+                        </div>
+                        <div class="lev3">
+                            <div class="lev3_h">北市区</div>
+                        </div>
+                        <div class="lev3">
+                            <div class="lev3_h ">阜平县</div>
+                            <div class="lev3_b">
+                                <div class="lev4">
+                                    <div class="lev4_h">富强镇</div>
+                                </div>
+                                <div class="lev4">
+                                    <div class="lev4_h">强富镇</div>
+                                </div>
+                                <div class="lev4">
+                                    <div class="lev4_h">富美镇</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lev1">
+            <div class="lev1_h ">黑龙江省</div>
+            <div class="lev1_b">
+            <div class="lev2">
+                <div class="lev2_h">大庆市</div>
+                <div class="lev2_b">
+                    <div class="lev3">
+                        <div class="lev3_h">萨尔图区</div>
+                    </div>
+                    <div class="lev3">
+                        <div class="lev3_h">萨尔区</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lev2">
+                <div class="lev2_h">伊春市</div>
+                <div class="lev2_b">
+                    <div class="lev3">
+                        <div class="lev3_h">萨尔图区</div>
+                    </div>
+                    <div class="lev3">
+                        <div class="lev3_h">萨尔区</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lev2">
+                <div class="lev2_h">大庆市</div>
+                <div class="lev2_b">
+                    <div class="lev3">
+                        <div class="lev3_h">萨尔图区</div>
+                    </div>
+                    <div class="lev3">
+                        <div class="lev3_h">萨尔区</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="lev1">
+            <div class="lev1_h ">湖北省</div>
+            <div class="lev1_b">
+            <div class="lev2">
+                <div class="lev2_h">武汉市</div>
+                <div class="lev2_b">
+                    <div class="lev3">
+                        <div class="lev3_h">s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lev2">
+                <div class="lev2_h">黄石市</div>
+                <div class="lev2_b">
+                    <div class="lev3">
+                        <div class="lev3_h">s</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lev2">
+                <div class="lev2_h">十堰市</div>
+                <div class="lev2_b">
+                    <div class="lev3">
+                        <div class="lev3_h">s</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $('.lev1_h').click(function(){
+        $(this).next().toggle();
+        $(this).addClass('cur');
+        if(!$(this).siblings('.lev1_b').is(':visible')){
+            $(this).removeClass('cur');
+        }       
+    });
+  
+    $('.lev2_h').click(function(){
+        $(this).next().toggle();
+        $(this).addClass('cur');
+        if(!$(this).next().is(':visible')){
+            $(this).removeClass('cur');
+        }
+       
+    })
+   
+    $('.lev3_h').click(function(){
+        $(this).next().toggle();
+        $(this).addClass('cur1');
+    
+    });
+</script>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #393C47;
+        }
+        .function{
+            position: relative;
+            width: 960px;
+            height: 450px;
+      
+            margin: 100px auto;
+            background: url(images/fb.png) no-repeat center center;            
+        }
+        .function dl.lt{
+            position: absolute;
+            top: 18px;
+            left:8%;
+            width: 252px;
+            height: 93px;
+            margin-bottom: 5px;
+            color: rgb(152,155,168);
+        }
+        .function .lt dt{
+            font-size: 18px;
+            width: 252px;
+            height: 40px;
+        }
+        .function .lt dd{
+            width: 252px;
+            height: 48px;
+            font-size: 12px;
+        }
+        .function dl.rt{
+            position: absolute;
+            top: 18px;
+            right: 8%;
+            width: 216px;
+            height: 93px;
+            color: rgb(152,155,168);
+        }
+        .function .rt dt{
+            font-size: 18px;
+            width: 216px;
+            height: 40px;
+        }
+        .function .rt dd{
+            width: 216px;
+            height: 48px;
+            font-size: 12px;
+            
+        }
+        .function dl.lb{
+            position: absolute;
+            bottom: 20%;
+            left: 8%;
+            width: 264px;
+            height: 93px;
+            color: rgb(152,155,168);
+        }
+        .function .lb dt{
+            font-size: 18px;
+            width: 264px;
+            height: 40px;
+        }
+        .function .lb dd{
+            width: 264px;
+            height: 48px;
+            font-size: 12px;
+        }
+        .function dl.rb{
+            position: absolute;
+            bottom: 24%;
+            right: 2%;
+            width: 265.8px;
+            height: 69px;
+            color: rgb(152,155,168);
+        }
+        .function .rb dt{
+            font-size: 18px;
+            width: 265.8px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+        .function .rb dd{
+            font-size: 12px;
+            width: 265.8px;
+            height: 24px;
+        }
+        .function .circle-outer{
+            position: absolute;
+            left:50%;
+            top:50%;
+           margin-top: -117.35px;
+           margin-left: -132.35px;
+            width: 264.73px;
+            height: 264.73px;
+            background: url(images/gq.png) no-repeat center center;
+            animation: circleOuter 3s linear 0s infinite;
+        }
+        .function .circle-inner{
+            position: absolute;
+            left:50%;
+            top:50%;
+           margin-top: -60px;
+           margin-left: -73px;
+            width: 150px;
+            height: 150px;
+            background: url(images/circle-inner.png) no-repeat;
+            animation: circleInner 5s linear 0s infinite ;
+        }
+        @keyframes circleOuter{
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes circleInner{
+            0%{
+                transform: rotate(0);
+            }
+            15%{
+                transform: rotate(-90deg);
+            }
+            25%{
+                transform: rotate(-90deg);
+            }
+            45%{
+                transform: rotate(-180deg);
+            }
+            60%{
+                transform: rotate(-180deg);
+            }
+            75%{
+                transform: rotate(-270deg);
+            }
+            90%{
+                transform: rotate(-270deg);
+            }
+            100%{
+                transform: rotate(-270deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="function">
+        <dl class="lt">
+            <dt>全能一键扫描</dt>
+            <dd>
+                只需一键扫描！快速、全面地诊断系统安全状况
+                <br>
+                和健康程度，并进行精准修复！
+            </dd>
+        </dl>
+        <dl class="rt">
+            <dt>极致交互体验</dt>
+            <dd>
+                全新设计的产品界面，更加清爽、简洁。
+                <br>
+                炫酷的换肤效果，让您拥有百变杀毒！
+            </dd>
+        </dl>
+        <dl class="lb">
+            <dt>超强广告拦截</dt>
+            <dd>
+                软件弹窗？浏览器弹窗？网页广告？超强广告拦截
+                <br>
+                帮您通通搞定！
+            </dd>
+        </dl>
+        <dl class="rb">
+            <dt>多重防御系统</dt>
+            <dd>
+                21层主防防护，多个实时防护为您提供专业安全
+            </dd>
+        </dl>
+        <div class="circle-outer"></div>
+        <div class="circle-inner"></div>
+    </div>
+</body>
+</html>

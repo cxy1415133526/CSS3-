@@ -18,6 +18,7 @@
             margin: 100px auto;
             position: relative;
             overflow: hidden;
+            background-color: #000;
         }
 
         .carousel ul {
@@ -151,7 +152,15 @@
             $('#carousel ol li').stop(true).animate({'left':-130*idx1},400)
            
         });
-    
+        $('#carousel #rightbtn').click(function () {
+            idx1--;
+            $('#carousel ol li').animate({ 'left': -106 * idx }, 100, function () {
+                if (idx1 == 5) {
+                    idx1 = 0;
+                    $('#carousel ol li').css('left', 0);
+                }
+            });
+        });
 
         setInterval(function () {
 
